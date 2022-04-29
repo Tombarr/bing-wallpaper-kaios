@@ -1,0 +1,70 @@
+{
+  "name": "Bing Wallpaper",
+  "display": "Bing Wallpaper",
+  "version": "1.0.0",
+  "subtitle": "Beautiful wallpapers daily",
+  "description": "Beautiful wallpapers from Bing, available daily. Not affiliated with nor endorsed by Microsoft Corporation.",
+  "type": "privileged",
+  "launch_path": "/index.html",
+  "icons": {
+    "56": "/logo_56.png",
+    "112": "/logo_112.png"
+  },
+  "categories": [
+    "utilities"
+  ],
+  "theme_color": "#00897b",
+  "developer": {
+    "name": "Last Byte LLC",
+    "url": "https://github.com/Tombarr"
+  },
+  "cursor": false,
+  "fullscreen": false,
+  "chrome": {
+    "statusbar": "overlap"
+  },
+  "dependencies": {
+    "ads-sdk": "1.5.5"
+	},
+  "permissions": {
+    "settings:wallpaper.image": {
+      "description": "Set system wallpaper",
+      "access": "readwrite"
+    },
+    "systemXHR": {
+      "description": "Download wallpapers"
+    },
+    "sandboxed-cookies": {
+      "description": "Sandbox cookies"
+    },
+    "serviceworker": {
+      "description": "Offline usage and notifications"
+    },
+    "desktop-notification": {
+      "description": "Display notifications"
+    },
+    "mobiledata": {
+      "description": "Use mobile data"
+    },
+    "wifidata": {
+      "description": "Use wifi data"
+    },
+    "alarms": {
+      "description": "Automatically set wallpaper"
+    }
+  },
+  "messages": [
+    { "serviceworker-notification": "/index.html" },
+    { "activity": "/index.html" },
+    { "alarm": "/index.html" }
+  ],
+  "locales": {
+    "en-US": {
+      "name": "Bing Wallpaper",
+      "subtitle": "Beautiful wallpapers daily",
+      "description": "Beautiful wallpapers from Bing, available daily. Not affiliated with nor endorsed by Microsoft Corporation."
+    }
+  },
+  "default_locale": "en-US",
+  "orientation": [ "portrait-primary", "landscape-primary" ]
+}

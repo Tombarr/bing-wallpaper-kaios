@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Cache-control" content="public" />
+    <meta name="referrer" content="origin" />
+
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="X-DNS-Prefetch-Control" content="on" />
+
+    <title>Bing Wallpaper</title>
+
+    <!-- Manifest -->
+
+    <!-- Preload -->
+    <link rel="preconnect" href="https://www.bing.com" />
+    <link rel="dns-prefetch" href="https://www.bing.com" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="./bing.css" />
+
+    <meta name="author" content="Tom Barrasso" />
+    <meta name="copyright" content="Copyright 2022" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <script defer type="text/javascript" src="./bing.js"></script>
+  </head>
+  <body role="application">
+    <div class="b_loadingIndicator">
+      <div class="point1"><div></div></div>
+      <div class="point2"><div></div></div>
+      <div class="point3"><div></div></div>
+      <div class="point4"><div></div></div>
+      <div class="point5"><div></div></div>
+    </div>
+    <img id="wallpaper" decoding="async" loading="lazy"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <div id="controls" class="start">
+      <h1 id="title"></h1>
+      <p id="copyright"></p>
+      <button class="chevron left"></button>
+      <button class="chevron right"></button>
+    </div>
+    <div id="snackbar"></div>
+    <menu id="softkey-menu">
+      <button id="softkey-left">
+        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <circle stroke="currentColor" stroke-width="2" cx="12" cy="12" r="10" />
+            <path d="M12,9.5 C12.8284271,9.5 13.5,8.82842712 13.5,8 C13.5,7.17157288 12.8284271,6.5 12,6.5 C11.1715729,6.5 10.5,7.17157288 10.5,8 C10.5,8.82842712 11.1715729,9.5 12,9.5 Z" fill="currentColor" />
+            <rect fill="currentColor" x="11" y="11" width="2" height="7" rx="1" />
+          </g>
+      </svg>
+      </button>
+      <button id="softkey-right">
+        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g stroke="currentColor" stroke-width="1" fill="none" fill-rule="evenodd">
+            <path d="M3.5,7 C3.5,6.72319836 3.72175357,6.5 3.99339768,6.5 L20.0066023,6.5 C20.2799786,6.5 20.5,6.72089465 20.5,7 C20.5,7.27680164 20.2782464,7.5 20.0066023,7.5 L3.99339768,7.5 C3.72002141,7.5 3.5,7.27910535 3.5,7 Z M3.5,12 C3.5,11.7231984 3.72175357,11.5 3.99339768,11.5 L20.0066023,11.5 C20.2799786,11.5 20.5,11.7208946 20.5,12 C20.5,12.2768016 20.2782464,12.5 20.0066023,12.5 L3.99339768,12.5 C3.72002141,12.5 3.5,12.2791054 3.5,12 Z M3.5,17 C3.5,16.7231984 3.72175357,16.5 3.99339768,16.5 L20.0066023,16.5 C20.2799786,16.5 20.5,16.7208946 20.5,17 C20.5,17.2768016 20.2782464,17.5 20.0066023,17.5 L3.99339768,17.5 C3.72002141,17.5 3.5,17.2791054 3.5,17 Z" />
+          </g>
+      </svg>
+      </button>
+    </menu>
+    <dialog id="menu-list" hidden>
+      <ol>
+        <li>
+          <button id="button-set-wallpaper">1. Set Wallpaper</button>
+        </li>
+        <li>
+          <button id="button-download-wallpaper">2. Download Wallpaper</button>
+        </li>
+        <li>
+          <button id="button-toggle-daily">3. Enable Daily</button>
+        </li>
+      </ol>
+    </dialog>
+    <dialog id="no-internet" hidden>
+      <svg width="64px" height="64px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <circle fill="currentColor" cx="12" cy="19.5" r="1.5" />
+          <path d="M16.2374836,15.7522084 C15.1521071,14.6694493 13.6542327,14 12,14 C10.3371761,14 8.83233881,14.6764209 7.74563922,15.7691117" stroke="currentColor" stroke-width="2" opacity="0.2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M19.7973964,12.2410945 C17.805288,10.2391654 15.0473553,9 12,9 C8.95750451,9 6.20350923,10.2352162 4.21214033,12.2315225" stroke="currentColor" stroke-width="2" opacity="0.2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M23.0164048,8.39655662 C20.1474472,5.67186502 16.2689661,4 12,4 C7.7372404,4 3.86383121,5.66700723 0.996114792,8.38467932" stroke="currentColor" stroke-width="2" opacity="0.2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M12,15 C11.4477153,15 10.9240398,14.5556326 10.8329211,14.0225875 L9.16707888,4.27740028 C9.07480376,3.73759027 9.43963623,3.20176057 9.97576904,3.11856312 C9.97576904,3.11856312 10,3 12,3 C14,3 14.024231,3.11856312 14.024231,3.11856312 C14.5631333,3.2187612 14.9240398,3.74435519 14.8329211,4.27740028 L13.1670789,14.0225875 C13.0748038,14.5623975 12.5561352,15 12,15 L12,15 Z" fill="currentColor" />
+        </g>
+      </svg>
+      <p>No Internet</p>
+    </dialog>
+    <noscript>Javascript is required</noscript>
+  </body>
+</html>
